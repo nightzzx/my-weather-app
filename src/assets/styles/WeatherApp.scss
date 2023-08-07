@@ -1,0 +1,63 @@
+input {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 0;
+  font-size: 12px;
+  font-family: Noto Sans, sans-serif;
+
+  // to hide the focus outline
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 16px;
+    height: 60px;
+  }
+}
+::placeholder {
+  color: black;
+  opacity: 0.5;
+}
+.searchBar {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 40% 40% auto;
+  gap: 15px;
+
+  // ipad portrait and above
+  @media (min-width: 768px) {
+    grid-template-columns: 45% 45% auto;
+  }
+
+  .searchIcon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-image: url(./src/assets/images/listSearch.svg);
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    background-color: #6c40b5;
+    justify-self: flex-end;
+    transition: 0.4s ease opacity;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @media (min-width: 1024px) {
+      width: 60px;
+      height: 60px;
+      background-size: 34px 34px;
+    }
+  }
+}
+.errorMsg {
+  color: red;
+}

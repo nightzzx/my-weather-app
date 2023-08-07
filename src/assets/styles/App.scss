@@ -1,0 +1,45 @@
+@font-face {
+  font-family: Noto Sans;
+  src: url(/src/assets/font/NotoSans-Regular.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Noto Sans;
+  src: url(/src/assets/font/NotoSans-SemiBold.woff);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Noto Sans;
+  src: url(/src/assets/font/NotoSans-Bold.woff);
+  font-weight: 600;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Noto Sans, sans-serif;
+  line-height: normal;
+  background-image: url(/src/assets/images/bg-light.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.app {
+  &.wrapper {
+    padding: 0 20px;
+
+    @media (min-width: 1024px) {
+      max-width: 700px;
+      margin: auto;
+      padding: 0;
+    }
+  }
+}
