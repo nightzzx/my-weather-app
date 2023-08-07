@@ -1,6 +1,7 @@
 import "../styles/WeatherList.scss";
 import WeatherHistory from "./WeatherHistory";
-
+import sunPng from "../images/sun.png";
+import cloudPng from "../images/cloud.png";
 export default function WeatherList({
   weatherListData,
   setWeatherListData,
@@ -41,9 +42,9 @@ export default function WeatherList({
                 todayWeather[0].main === "Rain" ||
                 todayWeather[0].main === "Drizzle" ||
                 todayWeather[0].main === "Thunderstorm" ? (
-                  <img src="./src/assets/images/cloud.png" />
+                  <img src={cloudPng} />
                 ) : (
-                  <img src="./src/assets/images/sun.png" />
+                  <img src={sunPng} />
                 )}
               </div>
               <p className="weatherStatus">{todayWeather[0].weather[0].main}</p>

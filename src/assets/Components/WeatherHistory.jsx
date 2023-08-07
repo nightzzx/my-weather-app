@@ -29,7 +29,6 @@ export default function WeatherHistory({
 
     let newCity = newValue[0].data.name;
     let newCountry = newValue[0].data.sys.country;
-    console.log(newCountry, "newCountry", newCity, "newCity");
     getWeather(newCountry, newCity);
   }
 

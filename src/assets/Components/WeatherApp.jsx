@@ -1,12 +1,12 @@
 import "../styles/WeatherApp.scss";
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import WeatherList from "./WeatherList";
 import { v4 as uuid } from "uuid";
 
 export default function WeatherApp() {
   const [searchStatus, setSearchStatus] = useState("");
 
-  const [formData, setFormData] = useState({ city: "skudai", country: "my" });
+  const [formData, setFormData] = useState({ city: "", country: "" });
   const [weatherListData, setWeatherListData] = useState([]);
   const [todayWeather, setTodayWeather] = useState([]);
 
@@ -19,15 +19,11 @@ export default function WeatherApp() {
     });
   };
 
-  let nums = [3, 1, 2, 10, 1];
-  [3, 4, 5, 13, 4];
-
   const getWeather = (searchCountry, searchCity) => {
-    console.log("sec times");
     if (searchCountry.length == 2 && searchCity.length !== 0) {
       const apiKey = "a4fdf1bea8e02c95bac21779af89649f";
 
-      // Make a request to OpenWeatherMap API
+      // Make a request to Open WeatherMap API
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity},${searchCountry}&units=metric&appid=${apiKey}`;
 
       fetch(apiUrl)
@@ -43,8 +39,7 @@ export default function WeatherApp() {
             ]);
             setTodayWeather([data]);
             setFormData({ city: "", country: "" });
-            console.log(todayWeather, "today weather");
-            // console.log(weatherListData);
+            // console.log(todayWeather, "today weather");
           } else {
             setSearchStatus("fail");
           }
